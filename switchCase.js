@@ -37,5 +37,4 @@ switch(operação) {
         default:
             console.log("Operação inválida");
             break;
-        
 }
