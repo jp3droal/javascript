@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+</head>
+
+<body>
+    <h1>
+        TITULO 1
+    </h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores ducimus voluptate vel. Cupiditate atque architecto, nemo culpa nihil magni id enim amet minima laudantium commodi dolorum sint possimus dicta iure!</p>
+    <p class="paragrafoClasse">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam consequatur quaerat quia modi odio asperiores tempore, similique sequi expedita illo, inventore natus accusamus eum iusto, voluptas labore suscipit animi earum.</p>
+    <ul>
+        <li>coisa</li>
+        <li>coisa</li>
+        <li id="especial">coisa</li>
+    </ul>
+
+    <div>
+        <h2>TITULO 2</h2>
+        <p></p>
+    </div>
+
+
+    <script>
+        let paragrafos = document.getElementsByTagName("p") //[]
+        let p = document.querySelector('p')
+        let para = document.querySelectorAll('p')
+
+        //mais especifica que a tag
+        let paragrafoComClasse = document.getElementsByClassName("paragrafoClasse")
+        let pClasse = document.querySelector(".paragrafoClasse")
+        let pSClasse = document.querySelectorAll(".paragrafoClasse")
+        //metodo mais especifico = um único elemento
+        let item = document.getElementById("especial")
+        //manipulação da propriedade de CSS
+        item.style.color = 'red'
+        //manipulação do conteudo da tag
+        item.innerHTML = 'item listado'
+
+        let li = document.querySelector("#especial")
+
+        let divisao = document.querySelector("div")
+        divisao.innerHTML += "<h3>TITULO 3</h3>"
+
+    </script>
+
+</body>
+</html>
