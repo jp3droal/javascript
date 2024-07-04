@@ -1,0 +1,47 @@
+<!--
+    html -> form -- entrada de informação para javascript
+            -input nome -> nomeUsuario
+            -input peso -> pesoUsuario
+            -input altura -> alturaUsuario
+            -3 labels
+            -input button ou button
+
+          ->div -- saida de informação para o usuario
+            -texto --- p 
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+
+</head>
+
+
+<body>
+    <h1>CALCULADORA DE IMC</h1>
+    <br>
+    <form action="#">
+        <label for="nome">NOME:</label> 
+        <input type="text"  id="nome" placeholder="Digite seu nome...">
+        <br>
+        <label for="altura">PESO:</label> 
+        <input type="text"  id="peso" placeholder="Digite seu peso...">
+        <br>
+        <label for="altura">ALTURA:</label> <input type="text" id="altura" placeholder="Digite sua altura...">
+        <br>
+        <button onclick="calcularIMC()">CALCULAR</button>
+        <input type="button" value="calcular" onclick="calcularIMC()">
+
+        
+    </form>
+    
+    <div id="resultado">
+            
+    </div>
+    <script src="calculadoradeimc.js"></script>
+</body>
+</html>
