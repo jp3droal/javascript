@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurante</title>
+</head>
+
+<style>
+    h1{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 50px;
+    }
+    body{
+        display:flex;
+        
+    }
+   
+
+</style>
+
+
+<header>
+    <h1>RESTAURANTE</h1>
+</header>
+<hr>
+<body>
+    <form action="#" style="display: flex; flex-direction: column;width: 600px;">
+   <label for="entrada">Entrada: </label> 
+   <input onchange="mostrarConta()" value="0" type="number" id="entrada">
+   <br>
+   <label for="pratoPrincipal">Prato Principal: </label> 
+   <input onchange="mostrarConta()" value="0" type="number" id="pratoPrincipal">
+   <br>
+   <label for="Bebidas">Bebidas: </label> 
+   <input onchange="mostrarConta()" value="0" type="number" id="bebidas">
+   <br>
+   <label for="Sobremesa">Sobremesa: </label> 
+   <input onchange="mostrarConta()" value="0" type="number" id="Sobremesa">
+   <br>
+   <hr>
+   <label for="Subtotal">Subtotal: </label> 
+   <input  disabled value="0" type="number" id="Subtotal">
+   <br> 
+   <label for="10serviço">10% Serviço: </label> 
+   <input disabled value="0" type="number" id="servico">
+   <br>
+   <br>
+   <button type="button" >CALCULAR TOTAL</button>
+   <br>
+   <br>
+   <label for="total">TOTAL A PAGAR: </label> 
+   <input disabled value="0" type="number" id="total"> 
+</form>
+
+    <script src="restaurante.js"></script>
+
+
+</body>
+
+
+
+
+
+</html>
