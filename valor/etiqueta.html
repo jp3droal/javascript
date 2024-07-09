@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+<script>
+try{
+    let valor = Number(prompt("DIGITE O VALOR DA PEÇA"))
+    let etiqueta = prompt("DIGITE QUAL ETIQUETA VOCÊ DESEJA")
+    let etiquetaVerm = 'vermelho'
+    let etiquetaVerd = 'verde'
+    let etiquetaAzul = 'azul'
+
+    if(etiqueta == etiquetaVerm || etiqueta == etiquetaVerd || etiqueta == etiquetaAzul ){
+        alert(`Sua roupa custa R$${valor} e a etiqueta dela é a ${etiqueta}`)
+    }else{
+        throw new Error("Essa etiqueta não existe")
+    }
+
+}catch(error){
+    alert(error.message)
+    console.log(error.message)
+}finally{
+    alert("sempre sou executado")
+}
+
+
+
+    
+    
+
+</script>
+
+</body>
+
+
+</html>
