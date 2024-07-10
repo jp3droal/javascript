@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .btns{
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+
+
+
+<body>
+    <h1>SISTEMA DE COTAÇÃO DE MOEDAS</h1>
+    <form action="#">
+        <label for="">Valor a converter</label>
+
+        <div class="btns">
+        
+        <input type="number" id="valor" name="valor" placeholder="DIGITE O VALOR ">
+        <input type="button" value="Dólar" id="usd">
+        <input type="button" value="Euro" id="eur">
+        <input type="button" value="Bitcoin" id="btc">
+    </div>
+    </form>
+
+
+    <div id="conversaoMoeda">
+
+    </div>
+
+    <script>
+        async function converterMoeda(codigoMoeda){
+           let resposta = await fetch(`https://economia.awesomeapi.com.br/json/last/${codigoMoeda}-BRL`)
+            let cotacao = await resposta.json()
+            montarTela( await cotacao[codigoMoeda + "BRL"])
+        }
+
+        function montarTela(objeto){
+            let conversaoMoeda = document.getElementById('conversaoMoeda')
+            let titulo = document.createElement("h1")
+            titulo.innerHTML = objeto.name
+
+            let valor = document.createElement('p')
+            let valorOriginal = document.getElementById('valor').value
+            valor.innerHTML = `R$ ${valorOriginal}`
+
+
+            let valorConvertido = document.createElement('p')
+            valorConvertido.innerHTML = `R$${valorOriginal / objeto.bid}`
+
+            conversaoMoeda.appendChild(titulo)
+            conversaoMoeda.appendChild(valor)
+            conversaoMoeda.appendChild(valorConvertido)
+
+            let data = document.createElement('h5')
+            dataCotacao.innerHTML = objeto.create_date
+            conversaoMoedaDiv.appendChild(dataCotacao)
+
+        }
+
+        let btnUSD = document.getElementById('usd')
+        btnUSD.addEventListener('click',()=>{converterMoeda('USD')})
+        let btnEUR = document.getElementById('eur')
+        btnUSD.addEventListener('click',()=>{converterMoeda('EUR')})
+        let btnBTC = document.getElementById('btc')
+        btnUSD.addEventListener('click',()=>{converterMoeda('BTC')})
+    </script>
+</body>
+</html>
